@@ -1,4 +1,4 @@
-var app  = angular.module("AxDxts",[]);
+var app  = angular.module("ax_directives",[]);
 
 app.value("version","0.0.1");
 

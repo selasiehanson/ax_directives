@@ -3,7 +3,7 @@
 describe("Main Controller", function (){
 	var mainModule;
 	var scope, controller;
-	beforeEach(module("AxDxts"));
+	beforeEach(module("ax_directives"));
 
 	it("should have a main controller", inject(function (version,$rootScope, $controller){
 		
