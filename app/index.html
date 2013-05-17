@@ -11,9 +11,20 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="stylesheet" href="styles/main.css">
+
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="styles/bootstrap.css">
+    <link rel="stylesheet" href="styles/bootstrap-responsive.css">
+    <link rel="stylesheet" href="scripts/directives/filter/ax_filter.css">
+    <link rel="stylesheet" href="scripts/directives/chosen/chosen.css">
+    <link rel="stylesheet" href="scripts/directives/date_picker/datepicker.css">  
+
+    <!--END STYLESHEETS -->
+
   </head>
-  <body ng-app="AxDxts">
+  <body ng-app="ax_directives">
 	this is the home page
+  <input class='ax-date' ng-model="date">
     <!--[if lt IE 7]>
       <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
     <![endif]-->
@@ -24,24 +35,38 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="container" ng-view></div>
+
+
+    <div class="container-fluid">
+      <div class="row-fluid"> 
+        <div id="main_pane">
+          <div class="inner span12">
+            
+            <div class="container" ng-view></div>
+          </div>
+        </div>
+      </div><!--/row-->
+    </div><!--/.fluid-container-->
+
+  
+    <script src="scripts/lib/jquery.js"></script>    
+    <script src="scripts/lib/bootstrap.js"></script>    
+    <script src="scripts/lib/bootstrap-datepicker.js"></script>    
+    <script src="scripts/lib/chosen.jquery.js"></script>    
+    
 
     <script src="components/angular/angular.js"></script>
     <script src="components/angular-resource/angular-resource.js"></script>
     <script src="components/angular-cookies/angular-cookies.js"></script>
     <script src="components/angular-sanitize/angular-sanitize.js"></script>
 
+    <!-- Directives -->
+    <script src="scripts/directives/helpers/helpers.js"></script>
+    <script src="scripts/directives/date_picker/date_picker_component.js"></script>
+    <!-- End Directives -->
     <!-- build:js scripts/scripts.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <!-- endbuild -->
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-      var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-      s.parentNode.insertBefore(g,s)}(document,'script'));
-    </script>
   </body>
 </html>

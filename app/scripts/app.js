@@ -1,4 +1,4 @@
-var app  = angular.module("ax_directives",[]);
+var app  = angular.module("ax_directives",["date_component"]);
 
 app.value("version","0.0.1");
 
@@ -12,6 +12,10 @@ app.controller("MainCtrl", ["$scope", function ($scope){
 	}
 }]);
 
-app.directive("greeter", function (){
-
+app.directive("greet", function (){
+	return {
+		restrict: "E",
+		replace: true,
+		template: '<h1> Hello World </h1>'
+	}
 });

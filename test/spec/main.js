@@ -38,3 +38,23 @@ describe("Main Controller", function (){
 
 	});
 });
+
+
+describe("Unit test for Greeter", function (){
+	var $compile;
+	var $rootScope;
+
+	beforeEach(module('ax_directives'));
+
+	beforeEach(inject(function (_$compile_, _$rootScope_) {
+		$compile = _$compile_ ;
+		$rootScope = _$rootScope_ ;
+	}));
+
+	it("Replaces the element with the text 'Hello World' ", function (){
+		var element = $compile("<greet></greet>")($rootScope);
+
+		expect(element.html()).toContain("Hello World");
+	});
+
+});
